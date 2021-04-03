@@ -55,6 +55,7 @@ type baseProcessor struct {
 	opt        *config.Option
 }
 
+// handleRPCErr write close message with status of given @err
 func (p *baseProcessor) handleRPCErr(err error) {
 	appStatus, ok := status.FromError(err)
 	if !ok {

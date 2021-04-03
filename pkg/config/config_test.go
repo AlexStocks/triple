@@ -19,6 +19,20 @@ func TestWithClientTimeout(t *testing.T) {
 	assert.Equal(t, opt.Timeout, uint32(120))
 }
 
+func TestWithSerializerType(t *testing.T) {
+	opt := NewTripleOption(
+		WithSerializerType(common.HessianSerializerName),
+	)
+	assert.NotNil(t, opt)
+	assert.Equal(t, opt.SerializerType, common.HessianSerializerName)
+
+	opt = NewTripleOption(
+		WithSerializerType(common.PBSerializerName),
+	)
+	assert.NotNil(t, opt)
+	assert.Equal(t, opt.SerializerType, common.PBSerializerName)
+}
+
 func TestWithBufferSize(t *testing.T) {
 	opt := NewTripleOption(
 		WithBufferSize(100000),

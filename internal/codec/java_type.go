@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// getArgType is copied from hessian, to get java class type of interface
 func getArgType(v interface{}) string {
 	if v == nil {
 		return "V"
@@ -97,7 +98,4 @@ func getArgType(v interface{}) string {
 			return ""
 		}
 	}
-
-	// unreachable
-	// return "java.lang.RuntimeException"
 }
