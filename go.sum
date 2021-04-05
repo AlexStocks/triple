@@ -240,6 +240,7 @@ github.com/dubbogo/triple v0.0.0-20210209063802-ba75c3ed4425/go.mod h1:H0+IdFdLk
 github.com/dubbogo/triple v0.0.0-20210301083516-185f5a3b1234/go.mod h1:v1szRcUO/P3lbe2NveWHBLsI4d3fF9tVCg5f8CB3WE8=
 github.com/dubbogo/triple v0.0.0-20210314060249-a8daea612f94/go.mod h1:/jrqKfnQRjI91dFT3cgUuDkG3AuFPTTMOya6RdCiVcE=
 github.com/dubbogo/triple v0.0.0-20210318081906-6fdf7ced4828/go.mod h1:LQDA+Bcob67J7qTEVjotf0+sSFiNUwFNDycWmUZk1w8=
+github.com/dubbogo/triple v0.0.0-20210403061850-372f2dc47e02/go.mod h1:ArB/FJCvy6DQXs8tW6LmNRtLaZuncGmDHqD/1JOAwsU=
 github.com/dustin/go-humanize v0.0.0-20171111073723-bb3d318650d4/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/eapache/go-resiliency v1.1.0/go.mod h1:kFI+JgMyC7bLPUVY133qvEBtVayf5mFgVsvEsIPBvNs=
