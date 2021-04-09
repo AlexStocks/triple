@@ -101,6 +101,8 @@ github.com/apache/dubbo-go v1.5.5 h1:bQX+eGANPFl/ldfvctQJdw5HKfTGBpiWx1gaXrrYwMA
 github.com/apache/dubbo-go v1.5.5/go.mod h1:KAty5L/vcHjh3qcTfC4R5Nfd0tkk7MLJnux/IQKfQLg=
 github.com/apache/dubbo-go v1.5.6-rc2 h1:e9ziyPQx65n/dyGrA0/ce263jV2+nnSzzpdu9LbfNpc=
 github.com/apache/dubbo-go v1.5.6-rc2/go.mod h1:wLJvPWbnrf6/bhoohBT404QK4t2JoNcckMw+/fJ9P+c=
+github.com/apache/dubbo-go v1.5.6-rc2.0.20210405080051-eeaca76e44bc h1:301YbcI7kOvY7mTCtP6f7jW1IK8AgLKz7Ys6mYbwlRc=
+github.com/apache/dubbo-go v1.5.6-rc2.0.20210405080051-eeaca76e44bc/go.mod h1:0e7d4a9lnyr7yBxoc6uVIKHzjJrCDXjyq0IiRv/9VMc=
 github.com/apache/dubbo-go-hessian2 v1.7.0 h1:u2XxIuepu/zb6JcGZc7EbvKboXdKoJbf7rbmeq6SF1w=
 github.com/apache/dubbo-go-hessian2 v1.7.0/go.mod h1:7rEw9guWABQa6Aqb8HeZcsYPHsOS7XT1qtJvkmI6c5w=
 github.com/apache/dubbo-go-hessian2 v1.8.2 h1:CQq2Mmlrk6Fqmudwl9Dqps8drTrBFnmXRlzgOjj0FqA=
@@ -223,6 +225,7 @@ github.com/dubbogo/gost v1.11.0 h1:9KtyWQz1gMlAfwzen5iyhMdoe08SPBBUVhco4rdgJ9I=
 github.com/dubbogo/gost v1.11.0/go.mod h1:w8Yw29eDWtRVo3tx9nPpHkNZnOi4SRx1fZf7eVlAAU4=
 github.com/dubbogo/gost v1.11.2 h1:NanyHmvzE1HrgI2T9H/jE/N1wkxFEj+IbM1A4RT9H7Q=
 github.com/dubbogo/gost v1.11.2/go.mod h1:3QQEj50QOhkWTERT785YZ5ZxIRGNdR11FCLP7FzHsMc=
+github.com/dubbogo/gost v1.11.3/go.mod h1:3QQEj50QOhkWTERT785YZ5ZxIRGNdR11FCLP7FzHsMc=
 github.com/dubbogo/jsonparser v1.0.1/go.mod h1:tYAtpctvSP/tWw4MeelsowSPgXQRVHHWbqL6ynps8jU=
 github.com/dubbogo/net v0.0.0-20210209064142-0e3827157a56 h1:SGuRExIHI3zirhNOzZYvjfE5Pix6wFR3ZWSby1o9IBE=
 github.com/dubbogo/net v0.0.0-20210209064142-0e3827157a56/go.mod h1:c+UEOYQYSvuxEb0Lnb/dNiD5jhxOYIa044Pw5gaANzY=
@@ -241,6 +244,7 @@ github.com/dubbogo/triple v0.0.0-20210301083516-185f5a3b1234/go.mod h1:v1szRcUO/
 github.com/dubbogo/triple v0.0.0-20210314060249-a8daea612f94/go.mod h1:/jrqKfnQRjI91dFT3cgUuDkG3AuFPTTMOya6RdCiVcE=
 github.com/dubbogo/triple v0.0.0-20210318081906-6fdf7ced4828/go.mod h1:LQDA+Bcob67J7qTEVjotf0+sSFiNUwFNDycWmUZk1w8=
 github.com/dubbogo/triple v0.0.0-20210403061850-372f2dc47e02/go.mod h1:ArB/FJCvy6DQXs8tW6LmNRtLaZuncGmDHqD/1JOAwsU=
+github.com/dubbogo/triple v0.1.0/go.mod h1:ArB/FJCvy6DQXs8tW6LmNRtLaZuncGmDHqD/1JOAwsU=
 github.com/dustin/go-humanize v0.0.0-20171111073723-bb3d318650d4/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/eapache/go-resiliency v1.1.0/go.mod h1:kFI+JgMyC7bLPUVY133qvEBtVayf5mFgVsvEsIPBvNs=
@@ -601,6 +605,7 @@ github.com/magiconair/properties v1.8.0/go.mod h1:PppfXfuXeibc/6YijjN8zIbojt8czP
 github.com/magiconair/properties v1.8.1/go.mod h1:PppfXfuXeibc/6YijjN8zIbojt8czPbwD3XqdrwzmxQ=
 github.com/magiconair/properties v1.8.4 h1:8KGKTcQQGm0Kv7vEbKFErAoAOFyyacLStRtQSeYtvkY=
 github.com/magiconair/properties v1.8.4/go.mod h1:y3VJvCyxH9uVvJTWEGAELF3aiYNyPKd5NZ3oSwXrF60=
+github.com/magiconair/properties v1.8.5/go.mod h1:y3VJvCyxH9uVvJTWEGAELF3aiYNyPKd5NZ3oSwXrF60=
 github.com/mailru/easyjson v0.0.0-20160728113105-d5b7844b561a/go.mod h1:C1wdFJiN94OJF2b5HbByQZoLdCWB1Yqtg26g4irojpc=
 github.com/marten-seemann/chacha20 v0.2.0/go.mod h1:HSdjFau7GzYRj+ahFNwsO3ouVJr1HFkWoEwNDb4TMtE=
 github.com/marten-seemann/qpack v0.1.0/go.mod h1:LFt1NU/Ptjip0C2CPkhimBz5CGE3WGDAUWqna+CNTrI=

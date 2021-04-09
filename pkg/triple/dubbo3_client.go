@@ -21,6 +21,7 @@ import (
 	"context"
 	dubboConstant "github.com/apache/dubbo-go/common/constant"
 	"github.com/dubbogo/triple/internal/codec"
+	"github.com/dubbogo/triple/internal/tools"
 	"github.com/dubbogo/triple/pkg/common"
 	"github.com/dubbogo/triple/pkg/config"
 	"reflect"
@@ -57,7 +58,7 @@ type TripleClient struct {
 // @impl must have method: GetDubboStub(cc *dubbo3.TripleConn) interface{}, to be capable with grpc
 // @opt is used to init http2 controller, if it's nil, use the default config
 func NewTripleClient(url *dubboCommon.URL, impl interface{}, opt *config.Option) (*TripleClient, error) {
-	opt = addDefaultOption(opt)
+	opt = tools.AddDefaultOption(opt)
 
 	tripleClient := &TripleClient{
 		url: url,

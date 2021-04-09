@@ -24,12 +24,12 @@ import (
 	"encoding/binary"
 	"fmt"
 	"github.com/dubbogo/triple/internal/status"
+	"github.com/dubbogo/triple/internal/tools"
 	"github.com/dubbogo/triple/pkg/config"
 	"io"
 	"net"
 	"net/http"
 	"strconv"
-	"strings"
 	"sync"
 	"time"
 )
@@ -308,13 +308,10 @@ any error occurs in the above procedures are fatal, as the invocation target can
 todo how to deal with error in this procedure gracefully is to be discussed next
 */
 func (hc *H2Controller) newServerStreamFromTripleHedaer(data h2Triple.ProtocolHeader) (stream.Stream, error) {
-	paramsList := strings.Split(data.GetPath(), "/")
-	// todo path params len check
-	if len(paramsList) < 3 {
-		return nil, status.Err(codes.Unimplemented, "invalid http2 triple path:"+data.GetPath())
+	interfaceKey, methodName, err := tools.GetServiceKeyAndUpperCaseMethodNameFromPath(data.GetPath())
+	if err != nil {
+		return nil, err
 	}
-	interfaceKey := paramsList[1]
-	methodName := paramsList[2]
 
 	serviceInterface, ok := hc.rpcServiceMap.Load(interfaceKey)
 	if !ok {
@@ -347,7 +344,7 @@ func (hc *H2Controller) newServerStreamFromTripleHedaer(data h2Triple.ProtocolHe
 		md, okm := mdMap[methodName]
 		streamd, oks := strMap[methodName]
 		if !okm && !oks {
-			logger.Errorf("method name %s not found in desc", methodName)
+			logger.Errorf("method name %s not found in desc\n", methodName)
 			return nil, status.Err(codes.Unimplemented, "method name %s not found in desc")
 		}
 

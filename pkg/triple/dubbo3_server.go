@@ -18,6 +18,7 @@
 package triple
 
 import (
+	"github.com/dubbogo/triple/internal/tools"
 	"github.com/dubbogo/triple/pkg/config"
 	"io"
 	"net"
@@ -47,7 +48,7 @@ type TripleServer struct {
 // NewTripleServer can create Server with url and some user impl providers stored in @serviceMap
 // @serviceMap should be sync.Map: "interfaceKey" -> Dubbo3GrpcService
 func NewTripleServer(url *dubboCommon.URL, serviceMap *sync.Map, opt *config.Option) *TripleServer {
-	opt = addDefaultOption(opt)
+	opt = tools.AddDefaultOption(opt)
 	return &TripleServer{
 		addr:          url.Location,
 		rpcServiceMap: serviceMap,

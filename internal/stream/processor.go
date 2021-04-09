@@ -22,8 +22,8 @@ import (
 	"errors"
 	"github.com/apache/dubbo-go/protocol/invocation"
 	"github.com/dubbogo/triple/internal/codec"
+	"github.com/dubbogo/triple/internal/tools"
 	"github.com/dubbogo/triple/pkg/config"
-	"strings"
 	"sync"
 )
 import (
@@ -108,8 +108,10 @@ func (p *unaryProcessor) processUnaryRPC(buf bytes.Buffer, service common.Dubbo3
 	var reply interface{}
 	var err error
 	if p.opt.SerializerType == common.TripleHessianWrapperSerializerName {
-		paramList := strings.Split(header.GetPath(), "/")
-		methodName := paramList[2]
+		_, methodName, e := tools.GetServiceKeyAndUpperCaseMethodNameFromPath(header.GetPath())
+		if e != nil {
+			return nil, e
+		}
 		var v codec.HessianUnmarshalStruct
 		if err := p.serializer.UnmarshalRequest(pkgData, &v); err != nil {
 			return nil, status.Errorf(codes.Internal, "Unary rpc request unmarshal error: %s", err)

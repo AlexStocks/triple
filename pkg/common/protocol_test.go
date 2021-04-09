@@ -99,6 +99,22 @@ func TestSetAndGetGetPackagerHandler(t *testing.T) {
 type TestDubbo3Serializer struct {
 }
 
+func (p *TestDubbo3Serializer) MarshalRequest(i interface{}) ([]byte, error) {
+	panic("implement me")
+}
+
+func (p *TestDubbo3Serializer) UnmarshalRequest(data []byte, v interface{}) error {
+	panic("implement me")
+}
+
+func (p *TestDubbo3Serializer) MarshalResponse(i interface{}) ([]byte, error) {
+	panic("implement me")
+}
+
+func (p *TestDubbo3Serializer) UnmarshalResponse(data []byte, v interface{}) error {
+	panic("implement me")
+}
+
 func (p *TestDubbo3Serializer) Marshal(v interface{}) ([]byte, error) {
 	return []byte{}, nil
 }

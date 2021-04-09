@@ -3,7 +3,7 @@ module github.com/dubbogo/triple
 go 1.15
 
 require (
-	github.com/apache/dubbo-go v1.5.6-rc2
+	github.com/apache/dubbo-go v1.5.6-rc2.0.20210405080051-eeaca76e44bc
 	github.com/apache/dubbo-go-hessian2 v1.9.1
 	github.com/dubbogo/net v0.0.2-0.20210326124702-e6a866993192
 	github.com/golang/protobuf v1.5.2
