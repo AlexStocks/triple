@@ -23,7 +23,8 @@ import (
 )
 
 import (
-	"github.com/apache/dubbo-go/protocol"
+	gxprotocol "github.com/dubbogo/gost/dubbogo/protocol"
+
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc"
 )
@@ -39,12 +40,12 @@ func (t *TestRPCService) Reference() string {
 	return ""
 }
 
-func (t *TestRPCService) SetProxyImpl(impl protocol.Invoker) {
+func (t *TestRPCService) SetProxyImpl(impl gxprotocol.Invoker) {}
 
-}
-func (t *TestRPCService) GetProxyImpl() protocol.Invoker {
+func (t *TestRPCService) GetProxyImpl() gxprotocol.Invoker {
 	return nil
 }
+
 func (t *TestRPCService) ServiceDesc() *grpc.ServiceDesc {
 	return nil
 }

@@ -20,22 +20,25 @@ package stream
 import (
 	"bytes"
 	"errors"
-	"github.com/apache/dubbo-go/protocol/invocation"
-	"github.com/dubbogo/triple/internal/codec"
-	"github.com/dubbogo/triple/internal/tools"
-	"github.com/dubbogo/triple/pkg/config"
 	"sync"
 )
+
 import (
-	"github.com/apache/dubbo-go/common/logger"
+	logger "github.com/dubbogo/gost/dubbogo/logger"
+	"github.com/apache/dubbo-go/protocol/invocation"
+
 	h2Triple "github.com/dubbogo/net/http2/triple"
 	"google.golang.org/grpc"
 )
+
 import (
+	"github.com/dubbogo/triple/internal/codec"
 	"github.com/dubbogo/triple/internal/codes"
 	"github.com/dubbogo/triple/internal/message"
 	"github.com/dubbogo/triple/internal/status"
+	"github.com/dubbogo/triple/internal/tools"
 	"github.com/dubbogo/triple/pkg/common"
+	"github.com/dubbogo/triple/pkg/config"
 )
 
 // processor is the interface, with func runRPC and close

@@ -19,15 +19,16 @@ package codec
 
 import (
 	"context"
-	"github.com/apache/dubbo-go/common/constant"
-	h2Triple "github.com/dubbogo/net/http2/triple"
 	"net/http"
 	"net/textproto"
 	"strconv"
 )
 
 import (
-	dubboCommon "github.com/apache/dubbo-go/common"
+	dubboCommon "github.com/dubbogo/gost/dubbogo"
+	constant "github.com/dubbogo/gost/dubbogo/constant"
+
+	h2Triple "github.com/dubbogo/net/http2/triple"
 )
 
 import (
@@ -50,6 +51,17 @@ const (
 
 	// TrailerKeyTraceProtoBin is triple trailer header
 	TrailerKeyTraceProtoBin = "trace-proto-bin"
+)
+
+const (
+	TripleUserAgent = "grpc-go/1.35.0-dev"
+	TripleServiceVersion = "tri-service-version"
+	TripleServiceGroup = "tri-service-group"
+	TripleRequestID = "tri-req-id"
+	TripleTraceID = "tri-trace-traceid"
+	TripleTraceRPCID = "tri-trace-rpcid"
+	TripleTraceProtoBin = "tri-trace-proto-bin"
+	TripleUnitInfo = "tri-unit-info"
 )
 
 // TripleHeader stores the needed http2 header fields of triple protocol
@@ -108,20 +120,20 @@ func NewTripleHeaderHandler(url *dubboCommon.URL, ctx context.Context) h2Triple.
 // if not, it will cause panic!
 func (t *TripleHeaderHandler) WriteTripleReqHeaderField(header http.Header) http.Header {
 
-	header["user-agent"] = []string{"grpc-go/1.35.0-dev"}
+	header["user-agent"] = []string{TripleUserAgent}
 	// get from ctx
 	//header["tri-service-version"] = []string{getCtxVaSave(t.Ctx, "tri-service-version")}
 	//header["tri-service-group"] = []string{getCtxVaSave(t.Ctx, "tri-service-group")}
 
 	// now we choose get from url
-	header["tri-service-version"] = []string{t.Url.GetParam(constant.APP_VERSION_KEY, "")}
-	header["tri-service-group"] = []string{t.Url.GetParam(constant.GROUP_KEY, "")}
+	header[TripleServiceVersion] = []string{t.Url.GetParam(constant.APP_VERSION_KEY, "")}
+	header[TripleServiceGroup] = []string{t.Url.GetParam(constant.GROUP_KEY, "")}
 
-	header["tri-req-id"] = []string{getCtxVaSave(t.Ctx, "tri-req-id")}
-	header["tri-trace-traceid"] = []string{getCtxVaSave(t.Ctx, "tri-trace-traceid")}
-	header["tri-trace-rpcid"] = []string{getCtxVaSave(t.Ctx, "tri-trace-rpcid")}
-	header["tri-trace-proto-bin"] = []string{getCtxVaSave(t.Ctx, "tri-trace-proto-bin")}
-	header["tri-unit-info"] = []string{getCtxVaSave(t.Ctx, "tri-unit-info")}
+	header[TripleRequestID] = []string{getCtxVaSave(t.Ctx, TripleRequestID)}
+	header[TripleTraceID] = []string{getCtxVaSave(t.Ctx,  TripleTraceID)}
+	header[TripleTraceRPCID] = []string{getCtxVaSave(t.Ctx, TripleTraceRPCID)}
+	header[TripleTraceProtoBin] = []string{getCtxVaSave(t.Ctx, TripleTraceProtoBin)}
+	header[TripleUnitInfo] = []string{getCtxVaSave(t.Ctx, TripleUnitInfo)}
 	if v, ok := t.Ctx.Value("authorization").([]string); !ok || len(v) != 2 {
 		return header
 	} else {
@@ -154,19 +166,19 @@ func (t *TripleHeaderHandler) ReadFromTripleReqHeader(r *http.Request) h2Triple.
 	tripleHeader.Path = r.URL.Path
 	for k, v := range header {
 		switch k {
-		case textproto.CanonicalMIMEHeaderKey("tri-service-version"):
+		case textproto.CanonicalMIMEHeaderKey(TripleServiceVersion):
 			tripleHeader.ServiceVersion = v[0]
-		case textproto.CanonicalMIMEHeaderKey("tri-service-group"):
+		case textproto.CanonicalMIMEHeaderKey(TripleServiceGroup):
 			tripleHeader.ServiceGroup = v[0]
-		case textproto.CanonicalMIMEHeaderKey("tri-req-id"):
+		case textproto.CanonicalMIMEHeaderKey(TripleRequestID):
 			tripleHeader.RPCID = v[0]
-		case textproto.CanonicalMIMEHeaderKey("tri-trace-traceid"):
+		case textproto.CanonicalMIMEHeaderKey(TripleTraceID):
 			tripleHeader.TracingID = v[0]
-		case textproto.CanonicalMIMEHeaderKey("tri-trace-rpcid"):
+		case textproto.CanonicalMIMEHeaderKey(TripleTraceID):
 			tripleHeader.TracingRPCID = v[0]
-		case textproto.CanonicalMIMEHeaderKey("tri-trace-proto-bin"):
+		case textproto.CanonicalMIMEHeaderKey(TripleTraceProtoBin):
 			tripleHeader.TracingContext = v[0]
-		case textproto.CanonicalMIMEHeaderKey("tri-unit-info"):
+		case textproto.CanonicalMIMEHeaderKey(TripleUnitInfo):
 			tripleHeader.ClusterInfo = v[0]
 		case textproto.CanonicalMIMEHeaderKey("content-type"):
 			tripleHeader.ContentType = v[0]

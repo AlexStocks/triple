@@ -19,20 +19,24 @@ package triple
 
 import (
 	"context"
-	dubboConstant "github.com/apache/dubbo-go/common/constant"
-	"github.com/dubbogo/triple/internal/codec"
-	"github.com/dubbogo/triple/internal/tools"
-	"github.com/dubbogo/triple/pkg/common"
-	"github.com/dubbogo/triple/pkg/config"
 	"reflect"
 	"sync"
 )
 
 import (
-	dubboCommon "github.com/apache/dubbo-go/common"
-	"github.com/apache/dubbo-go/common/logger"
+	dubboCommon "github.com/dubbogo/gost/dubbogo"
+	dubboConstant "github.com/dubbogo/gost/dubbogo/constant"
+	logger "github.com/dubbogo/gost/dubbogo/logger"
+
 	perrors "github.com/pkg/errors"
 	"google.golang.org/grpc"
+)
+
+import (
+	"github.com/dubbogo/triple/internal/codec"
+	"github.com/dubbogo/triple/internal/tools"
+	"github.com/dubbogo/triple/pkg/common"
+	"github.com/dubbogo/triple/pkg/config"
 )
 
 // TripleClient client endpoint for client end

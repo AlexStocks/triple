@@ -19,11 +19,11 @@ package codec
 
 import (
 	hessian "github.com/apache/dubbo-go-hessian2"
-	proto2 "github.com/dubbogo/triple/internal/codec/proto"
 	"github.com/golang/protobuf/proto"
 )
 
 import (
+	proto2 "github.com/dubbogo/triple/internal/codec/proto"
 	"github.com/dubbogo/triple/pkg/common"
 )
 
@@ -34,8 +34,7 @@ func init() {
 }
 
 // ProtobufCodeC is the protobuf impl of Dubbo3Serializer interface
-type ProtobufCodeC struct {
-}
+type ProtobufCodeC struct {}
 
 // Marshal serialize interface @v to bytes
 func (p *ProtobufCodeC) MarshalRequest(v interface{}) ([]byte, error) {
@@ -73,8 +72,7 @@ func NewProtobufCodeC() common.Dubbo3Serializer {
 //	return "org.apache.dubbo.HessianPkg"
 //}
 
-type HessianCodeC struct {
-}
+type HessianCodeC struct {}
 
 func (h *HessianCodeC) MarshalRequest(v interface{}) ([]byte, error) {
 	encoder := hessian.NewEncoder()

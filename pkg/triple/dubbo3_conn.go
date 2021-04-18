@@ -19,8 +19,11 @@ package triple
 
 import (
 	"context"
-	"google.golang.org/grpc"
 	"reflect"
+)
+
+import (
+	"google.golang.org/grpc"
 )
 
 // TripleConn is the sturuct that called in pb.go file, it's client field contains all net logic of dubbo3

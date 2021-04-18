@@ -19,18 +19,20 @@ package stream
 
 import (
 	"bytes"
-	"github.com/dubbogo/triple/pkg/config"
 )
+
 import (
-	dubboCommon "github.com/apache/dubbo-go/common"
-	"github.com/apache/dubbo-go/common/logger"
+	dubboCommon "github.com/dubbogo/gost/dubbogo"
+	logger "github.com/dubbogo/gost/dubbogo/logger"
 	h2Triple "github.com/dubbogo/net/http2/triple"
 	"google.golang.org/grpc"
 )
+
 import (
 	"github.com/dubbogo/triple/internal/message"
 	"github.com/dubbogo/triple/internal/status"
 	"github.com/dubbogo/triple/pkg/common"
+	"github.com/dubbogo/triple/pkg/config"
 )
 
 /////////////////////////////////stream

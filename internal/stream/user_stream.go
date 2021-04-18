@@ -20,11 +20,13 @@ package stream
 import (
 	"context"
 )
+
 import (
-	"github.com/apache/dubbo-go/common/logger"
+	logger "github.com/dubbogo/gost/dubbogo/logger"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc/metadata"
 )
+
 import (
 	"github.com/dubbogo/triple/internal/message"
 	"github.com/dubbogo/triple/pkg/common"

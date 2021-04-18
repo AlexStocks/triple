@@ -4,7 +4,7 @@
 
 - triple/benchmark/
 
-  压力测试组件，[使用方法](../benchmark/readme.md)
+  压力测试组件，[使用方法](https://github.com/dubbogo/triple-benchmark/blob/master/README.md)
 
 - triple/docs
 

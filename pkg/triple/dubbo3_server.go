@@ -18,8 +18,6 @@
 package triple
 
 import (
-	"github.com/dubbogo/triple/internal/tools"
-	"github.com/dubbogo/triple/pkg/config"
 	"io"
 	"net"
 	"net/http"
@@ -27,9 +25,14 @@ import (
 )
 
 import (
-	dubboCommon "github.com/apache/dubbo-go/common"
-	"github.com/apache/dubbo-go/common/logger"
+	dubboCommon "github.com/dubbogo/gost/dubbogo"
+	logger "github.com/dubbogo/gost/dubbogo/logger"
 	"golang.org/x/net/http2"
+)
+
+import (
+	"github.com/dubbogo/triple/internal/tools"
+	"github.com/dubbogo/triple/pkg/config"
 )
 
 // TripleServer is the object that can be started and listening remote request

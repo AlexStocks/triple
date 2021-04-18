@@ -25,8 +25,9 @@ import (
 )
 
 import (
-	"github.com/apache/dubbo-go/common"
+	common "github.com/dubbogo/gost/dubbogo"
 	netTriple "github.com/dubbogo/net/http2/triple"
+
 	"gotest.tools/assert"
 )
 

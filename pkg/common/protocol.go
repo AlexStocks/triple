@@ -23,9 +23,10 @@ import (
 )
 
 import (
-	"github.com/apache/dubbo-go/common"
-	"github.com/apache/dubbo-go/common/logger"
+	common "github.com/dubbogo/gost/dubbogo"
+	logger "github.com/dubbogo/gost/dubbogo/logger"
 	netTriple "github.com/dubbogo/net/http2/triple"
+
 	perrors "github.com/pkg/errors"
 )
 

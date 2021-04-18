@@ -23,9 +23,6 @@ import (
 	"crypto/tls"
 	"encoding/binary"
 	"fmt"
-	"github.com/dubbogo/triple/internal/status"
-	"github.com/dubbogo/triple/internal/tools"
-	"github.com/dubbogo/triple/pkg/config"
 	"io"
 	"net"
 	"net/http"
@@ -35,10 +32,12 @@ import (
 )
 
 import (
-	dubboCommon "github.com/apache/dubbo-go/common"
-	"github.com/apache/dubbo-go/common/logger"
+	dubboCommon "github.com/dubbogo/gost/dubbogo"
+	logger "github.com/dubbogo/gost/dubbogo/logger"
+
 	h2 "github.com/dubbogo/net/http2"
 	h2Triple "github.com/dubbogo/net/http2/triple"
+
 	perrors "github.com/pkg/errors"
 	"google.golang.org/grpc"
 )
@@ -47,8 +46,11 @@ import (
 	"github.com/dubbogo/triple/internal/codec"
 	"github.com/dubbogo/triple/internal/codes"
 	"github.com/dubbogo/triple/internal/message"
+	"github.com/dubbogo/triple/internal/status"
 	"github.com/dubbogo/triple/internal/stream"
+	"github.com/dubbogo/triple/internal/tools"
 	"github.com/dubbogo/triple/pkg/common"
+	"github.com/dubbogo/triple/pkg/config"
 )
 
 // H2Controller is used by dubbo3 client/server, to call http2

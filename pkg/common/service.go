@@ -18,16 +18,17 @@
 package common
 
 import (
-	"github.com/apache/dubbo-go/protocol"
+	"github.com/dubbogo/gost/dubbogo/protocol"
+
 	"google.golang.org/grpc"
 )
 
 // Dubbo3GrpcService is gRPC service, used to check impl
 type Dubbo3GrpcService interface {
 	// SetProxyImpl sets proxy.
-	SetProxyImpl(impl protocol.Invoker)
+	SetProxyImpl(impl gxprotocol.Invoker)
 	// GetProxyImpl gets proxy.
-	GetProxyImpl() protocol.Invoker
+	GetProxyImpl() gxprotocol.Invoker
 	// ServiceDesc gets an RPC service's specification.
 	ServiceDesc() *grpc.ServiceDesc
 }
